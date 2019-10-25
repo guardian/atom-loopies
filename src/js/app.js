@@ -47,7 +47,7 @@ function hideAtom() {
   });
 
   let hideStyles = document.createElement('style');
-  hideStyles.innerHTML = '.element-atom-hidden{display:none;}';
+  hideStyles.innerHTML = '.element-atom-hidden{display:none!important;}';
   parentDoc.body.appendChild(hideStyles);
   console.log(hideStyles);
 }
