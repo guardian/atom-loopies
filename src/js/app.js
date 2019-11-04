@@ -56,11 +56,12 @@ function getSheetLink() {
   let sheetLink = false;
 
   let parentDoc = window.parent.document;
-  let articleText = parentDoc.querySelectorAll('.content__article-body > p, .article__body p');
-  articleText.forEach(function (elP) {
-    if (elP.innerText.indexOf('https://interactive.guim.co.uk/docsdata') >= 0) {
-      sheetLink = elP.innerText.trim();
-      elP.classList.add('element-atom-hidden');
+  let articleText = parentDoc.querySelectorAll('.element-embed iframe');
+  articleText.forEach(function (iframeEl) {
+    let iframeDoc = iframeEl.contentWindow.document;
+    if (iframeDoc.querySelector('#video-loops-json') != null) {
+      sheetLink = iframeDoc.querySelector('#video-loops-json').innerText.trim();
+      iframeEl.classList.add('element-atom-hidden');
     }
   });
 
