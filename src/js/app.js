@@ -26,7 +26,7 @@ function createLoop(el, url) {
   console.log(el, url)
   let vidWrapper = document.createElement('div');
   vidWrapper.classList.add('loop')
-  vidWrapper.innerHTML = '<video style="position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;" class="fig-vid" autoplay="autoplay" webkit-playsinline="true" muted="muted" playsinline="true" preload="auto" loop="loop"><source src="' + url + '"></video>';
+  vidWrapper.innerHTML = '<video style="position:absolute;top:0;left:0;right:0;bottom:0;width:100%;" class="fig-vid" autoplay="autoplay" webkit-playsinline="true" muted="muted" playsinline="true" preload="auto" loop="loop"><source src="' + url + '"></video>';
   el.appendChild(vidWrapper);
   el.classList.add('has-loop');
 }
